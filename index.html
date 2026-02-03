@@ -3,16 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Be My Valentine 💖</title>
+  <title>Valentine for Geraldine 💐</title>
   <style>
     body {
       margin: 0;
-      min-height: 100vh;
+      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
       background: linear-gradient(135deg, #ff9a9e, #fad0c4);
       font-family: 'Poppins', sans-serif;
+      zoom: 1.2;
     }
 
     .card {
@@ -21,44 +22,44 @@
       border-radius: 25px;
       text-align: center;
       box-shadow: 0 15px 40px rgba(0,0,0,0.25);
-      max-width: 380px;
-      width: 90%;
-      animation: fadeIn 1.2s ease;
+      max-width: 400px;
+      width: 95%;
+      animation: popIn 1s ease;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
     }
 
     h1 {
       color: #ff4d6d;
-      margin-bottom: 10px;
-      font-size: 28px;
+      margin-bottom: 20px;
+      font-size: 30px;
     }
 
     p {
       color: #555;
-      font-size: 15px;
+      font-size: 18px;
       line-height: 1.6;
     }
 
     .heart {
-      font-size: 40px;
-      animation: beat 1.5s infinite;
+      font-size: 50px;
+      animation: beat 1.2s infinite;
     }
 
     @keyframes beat {
       0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.15); }
+      50% { transform: scale(1.3); }
     }
 
     button {
       border: none;
-      padding: 12px 22px;
-      margin: 12px 8px;
+      padding: 14px 24px;
+      margin: 12px 6px;
       border-radius: 30px;
-      font-size: 16px;
+      font-size: 18px;
       cursor: pointer;
       transition: all 0.3s ease;
     }
@@ -66,11 +67,10 @@
     .yes {
       background: #ff4d6d;
       color: white;
-      box-shadow: 0 6px 15px rgba(255,77,109,0.4);
     }
 
     .yes:hover {
-      transform: scale(1.05);
+      transform: scale(1.15);
       background: #e63950;
     }
 
@@ -85,59 +85,40 @@
       margin-top: 20px;
       color: #ff4d6d;
       font-weight: bold;
-      font-size: 16px;
+      font-size: 20px;
     }
 
-    .extra {
+    .gif {
       display: none;
-      margin-top: 15px;
-      color: #444;
-      font-size: 14px;
+      margin-top: 20px;
+      width: 200px;
+      border-radius: 15px;
     }
   </style>
 </head>
 <body>
   <div class="card">
-    <div class="heart">💖</div>
-    <h1>Hi, happy you’re here, Geraldine 🌷</h1>
-    <p>
-      I just want to say this first…<br><br>
-      Life gets busy, days get tiring, but somehow you still make everything feel lighter.
-      The laughs, the little moments, the random talks — they all mean more than you probably know.
-    </p>
-
-    <p>
-      So here I am, doing something a little cheesy,
-      a little fun,
-      but very sincere 💌
-    </p>
-
-    <p><strong>Will you be my Valentine?</strong></p>
+    <div class="heart">💐</div>
+    <h1>Hi Geraldine! 🌷</h1>
+    <p>You make my days brighter 😌💌<br>So, will you be my Valentine?</p>
 
     <button class="yes" onclick="sayYes()">Yes 💕</button>
     <button class="no" onmouseover="moveNo()">No 😅</button>
 
-    <div class="message" id="message">
-      YAY!! 💘💘💘<br>
-      You just made my heart very, very happy.
-    </div>
-
-    <div class="extra" id="extra">
-      Thank you for choosing me today 🌹<br>
-      I promise laughs, warmth, and lots of sweet moments.
-    </div>
+    <div class="message" id="message">YAY!! 💐 You just made my heart super happy 😍</div>
+    <img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" alt="Celebration" class="gif" id="gif">
   </div>
 
   <script>
     function sayYes() {
       document.getElementById('message').style.display = 'block';
-      document.getElementById('extra').style.display = 'block';
+      document.getElementById('gif').style.display = 'block';
     }
 
     function moveNo() {
       const btn = document.querySelector('.no');
-      const x = Math.random() * 220 - 110;
-      const y = Math.random() * 220 - 110;
+      const x = Math.random() * 200 - 100;
+      const y = Math.random() * 200 - 100;
       btn.style.transform = `translate(${x}px, ${y}px)`;
     }
   </script>
